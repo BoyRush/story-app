@@ -1,0 +1,271 @@
+:root {
+  --bg: #0b0d10;
+  --card: #12161c;
+  --text: #e6e8eb;
+  --muted: #a8b0bb;
+  --border: #232a34;
+  --accent: #7c5cff;
+  --danger: #ff5c7a;
+  --success: #44d27f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--text); }
+
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.narrow {
+  width: min(640px, 100%);
+}
+
+.skip-to {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 10px 12px;
+  background: var(--accent);
+  color: white;
+  border-radius: 12px;
+  z-index: 999;
+}
+
+.skip-to:focus {
+  left: 12px;
+  top: 12px;
+  outline: 3px solid white;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 13, 16, 0.85);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-name {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+}
+
+.nav-list a, .linklike {
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-list a:focus, .linklike:focus,
+button:focus, input:focus, textarea:focus {
+  outline: 3px solid rgba(124, 92, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.drawer-button {
+  display: none;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 14px;
+}
+
+.navigation-drawer {
+  display: block;
+}
+
+.main-content {
+  padding-bottom: 40px;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 12px 0 16px;
+}
+
+.sub { color: var(--muted); margin: 6px 0 0; }
+
+.header-actions { display: flex; gap: 10px; align-items: center; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 18px;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.card-title { margin: 0 0 10px; font-size: 1.1rem; }
+
+.map { height: 520px; border-radius: 14px; border: 1px solid var(--border); }
+
+.story-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+
+.story-item article { display: grid; gap: 8px; }
+
+.story-item-button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.story-thumb {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.story-title { margin: 0; font-size: 1rem; }
+.story-desc { margin: 6px 0 0; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.story-date { margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+.story-links { display: flex; gap: 10px; }
+.link { color: var(--text); }
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(124, 92, 255, 0.45);
+  background: rgba(124, 92, 255, 0.18);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button.secondary {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form { display: grid; gap: 14px; }
+.form-group { display: grid; gap: 6px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.checkbox-row { display: flex; align-items: center; gap: 10px; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--text);
+}
+
+textarea { resize: vertical; }
+
+.field-hint, .hint { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+.feedback .error { color: var(--danger); }
+.feedback .success { color: var(--success); }
+
+.loading { color: var(--muted); }
+
+.camera-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.camera-video, .camera-preview { width: 100%; margin-top: 10px; border-radius: 14px; border: 1px solid var(--border); }
+
+.story-detail { display: grid; gap: 12px; }
+.story-hero { width: 100%; border-radius: 18px; border: 1px solid var(--border); }
+
+/* Responsive (Kriteria 4 - Skilled)
+   Mobile: 375px, Tablet: 768px, Desktop: 1024px
+*/
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .map { height: 420px; }
+}
+
+@media (max-width: 768px) {
+  .drawer-button { display: inline-flex; }
+  .navigation-drawer { position: fixed; right: 12px; top: 62px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 10px; transform: translateY(-10px); opacity: 0; pointer-events: none; transition: 180ms; }
+  .navigation-drawer.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-list { flex-direction: column; }
+}
+
+@media (max-width: 375px) {
+  .story-item-button { grid-template-columns: 70px 1fr; }
+  .story-thumb { width: 70px; height: 70px; }
+}
+
+/* Custom View Transition (Kriteria 1 - Advance)
+   Falls back automatically if API not supported.
+*/
+@keyframes slide-in {
+  from { transform: translateX(8%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-8%); opacity: 0; }
+}
+
+::view-transition-old(root) {
+  animation: slide-out 220ms ease;
+}
+
+::view-transition-new(root) {
+  animation: slide-in 220ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

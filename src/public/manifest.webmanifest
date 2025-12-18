@@ -1,0 +1,11 @@
+{
+  "name": "Dicoding Story",
+  "short_name": "Story",
+  "start_url": "/#/",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10",
+  "icons": [
+    { "src": "/images/logo.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
