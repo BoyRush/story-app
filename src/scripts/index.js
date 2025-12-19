@@ -6,7 +6,7 @@ import App from './pages/app';
 async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
 
-  await navigator.serviceWorker.register('/sw.js');
+  await navigator.serviceWorker.register('./sw.js');
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
